@@ -1,12 +1,8 @@
 name: Run Jupyter Notebook with Papermill
 
+# Trigger manually using the "workflow_dispatch" event
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  workflow_dispatch:  # Allows you to manually trigger the workflow from the Actions tab
 
 jobs:
   run-notebook:
