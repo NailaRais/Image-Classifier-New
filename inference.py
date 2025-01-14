@@ -58,12 +58,12 @@ def display_prediction(image_path, model, class_to_idx, output_file="prediction_
 
 def main():
     # Parse command-line arguments
-    parser = argparse.ArgumentParser(description="Predict the class of an input image using a trained model")
+    parser = argparse.ArgumentParser(description="Run inference and save prediction results to a file")
     parser.add_argument("--repo_id", type=str, required=True, help="Hugging Face repository ID (e.g., 'nailarais1/image-classifier-efficientnet')")
     parser.add_argument("--image_path", type=str, required=True, help="Path to the input image")
     parser.add_argument("--device", type=str, default="cpu", choices=["cpu", "cuda"], help="Device to run inference on")
     parser.add_argument("--topk", type=int, default=5, help="Number of top predictions to return")
-    parser.add_argument("--output_file", type=str, default="results/prediction_results.txt", help="Path to save prediction results")
+    parser.add_argument("--output_file", type=str, default="results/inference_results.txt", help="Path to save prediction results")
     args = parser.parse_args()
 
     print(f"Repository ID: {args.repo_id}")
@@ -86,4 +86,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
