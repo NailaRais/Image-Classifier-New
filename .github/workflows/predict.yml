@@ -1,9 +1,8 @@
 name: Predict
 
+# Trigger manually using the "workflow_dispatch" event
 on:
-  push:
-    branches:
-      - main  # Trigger workflow on pushes to the main branch
+  workflow_dispatch:  # Allows you to manually trigger the workflow from the Actions tab
 
 jobs:
   predict:
